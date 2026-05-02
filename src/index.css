@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-accent: #D4AF37;
+  --color-accent-foreground: #FFFFFF;
+  --color-card: var(--card);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border-subtle: var(--border-subtle);
+}
+
+:root {
+  --background: #F4F4F5;
+  --card: #FFFFFF;
+  --text-main: #0B0B0B;
+  --text-muted: #71717A;
+  --surface: rgba(0, 0, 0, 0.05);
+  --surface-hover: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  --background: #0B0B0B;
+  --card: #1A1A1A;
+  --text-main: #FFFFFF;
+  --text-muted: #A1A1AA;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-hover: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-sans transition-colors duration-300;
+  }
+  
+  /* Global utility to handle transition of all background and border colors */
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+}
+
+.dark-card {
+  @apply bg-card border border-border-subtle rounded-2xl p-6 shadow-xl transition-all duration-300;
+}
